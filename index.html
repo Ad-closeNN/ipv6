@@ -1,0 +1,1056 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>IPv6 测试</title>
+
+  <meta name="description" content='本站能测试你的浏览器和网络是否支持 IPv6，并显示你当前的 IPv4 和 IPv6 地址。' /> 
+  <meta name="keywords" content="test,ipv4,ipv6,isp" />
+  <meta name="y_key" content="6a3ded130c3ff129" />
+  <link rel="stylesheet" href="/index.css.gz?version=1.1.949" type="text/css" />
+
+  <!-- generic -->
+  <link rel="SHORTCUT ICON" href="/images/favicon.ico" />
+
+  <!-- apple -->
+  <link rel="apple-touch-icon" href="/images/favicon-120.png?version=1.1.949"/> 
+  <link rel="apple-touch-icon" href="/images/favicon-128.png?version=1.1.949" sizes="128x128"/> 
+  <link rel="apple-touch-icon" href="/images/favicon-152.png?version=1.1.949" sizes="152x152"/> 
+  <link rel="apple-touch-icon" href="/images/favicon-167.png?version=1.1.949" sizes="167x167"/> 
+  <link rel="apple-touch-icon" href="/images/favicon-180.png?version=1.1.949" sizes="180x180"/> 
+  <link rel="apple-touch-icon" href="/images/favicon-256.png?version=1.1.949" sizes="256x256"/> 
+  
+  <!-- android -->
+  <link rel="icon" href="/images/favicon-256.png?version=1.1.949" sizes="256x256"/> 
+  <link rel="icon" href="/images/favicon-192.png?version=1.1.949" sizes="192x192"/> 
+  <link rel="icon" href="/images/favicon-128.png?version=1.1.949" sizes="128x128"/> 
+  
+  <!-- touch bar -->
+  <link rel="mask-icon" href="/images/website_icon.svg?version=1.1.949" color="green"/>
+
+
+  <meta property="og:image" content="https://test-ipv6.com/images/snapshot.png" />
+
+   <script type="text/javascript"  src="/site/config.js?version=1.1.949"></script>
+   <script type="text/javascript"  src="/index.js.gz.zh_CN?version=1.1.949"></script>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript">
+BrowserName="IE6";
+</script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//  Load help pages inside mini tabs if possible; else
+//  make same function load entire document with real headers
+function help_page (url,text) {
+  console.log("help_page")
+
+  if(document.getElementById("is_index_page") !== null) {
+      console.log("help_page using help_popup");
+      GIGO.help_popup(url,text);
+  } else {
+      console.log("help_page changing document url");
+      document.location = url;
+  }
+  return false;
+};
+</script>
+
+
+</head>
+
+<body>
+
+
+<div id="navcontainer">
+<ul id="navlist">
+
+<li><a href="/"
+ id="current" >测试 IPv6</a></li>
+
+
+
+<li><a href="/faq.html"
+>常见问题</a></li>
+
+
+
+<li><a href="/mirrors.html"
+>镜像</a></li>
+
+
+
+
+<!-- IF this is a page not normally in the banner, put it up this time anyways. -->
+
+
+
+
+
+
+
+
+
+
+  <li class="navright" tabname="stats" style="display:none"><a href="/stats.html" tabname="stats"
+  >统计</a></li>
+
+
+
+
+
+
+</ul>
+
+<div class="navright">
+<a href="/locale.html">
+<img src="/images/icon_987_red.png" style="height: 2em; width: auto;" border="0" />
+</a>
+</div>
+
+</div>
+
+
+<h1 id="title" style="margin-bottom:0;">
+  IPv6 连接测试
+<span id="replay" class="replay" style="display:none">
+  （结果再现）
+</span>
+</h1>
+
+<div id="is_index_page"><!-- used to identify if we're showing index page--></div>
+
+<!-- Do I ever hate the ways that browsers break things with javascript disabled. Can't even count on noscript tags. !-->
+
+<div id="noscript">
+  <p id="score0">需要 JavaScript</p>
+  
+  
+  <p>为了进行测试，本网站需要 JavaScript 以及拉取第三方脚本的权限。</p>
+  <p>此信息没有消失，说明 JavaScript 已被你的浏览器插件、扩展或设置禁用。</p>
+
+  <p id="score1">你使用了 NoScript 吗？</p>
+  <p>
+   如果使用了这个 Firefox 附加组件，你需要<b>点击两次</b>“临时允许此页面全部脚本”才能正常进行测试。你也可以彻底禁用 NoScript，直到测试完成。</p>
+
+  <p>你也可以进行<a href="simple_test.html">简要测试</a>，快速判断 IPv4、IPv6 和双栈连通情况，但得不到详细的评估。</p>
+</div>
+
+
+<script type="text/javascript">
+ jQuery("#noscript").hide();
+ try {
+     if (MirrorConfig) {
+         GIGO.test_ipv6_gui();
+     }
+ } catch (e) {
+     // 0;
+ }
+</script>
+
+
+
+
+<div class="tabbox_outside">
+
+<div id="tabnavcontainer">
+<ul id="tabnavlist">
+
+<li id="tabbutton_helpdesk_link"><a href="#" class="tabbutton_helpdesk"  onclick='return GIGO.tabnav("helpdesk")'>客服信息</a></li>
+<li><a href="#" class="tabbutton_main" id="tabcurrent" onclick='return GIGO.tabnav("main")'>摘要</a></li>
+<li><a href="#" class="tabbutton_tests"  onclick='return GIGO.tabnav("tests")'>测试项目</a></li>
+<li style="display:none" id="tabbutton_mail_link"><a href="#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>联系与反馈</a></li>
+
+<li id="faqtablink" style="display:none" class="navright"><a href="#" class="tabbutton_faq"  onclick='return GIGO.tabnav("faq")'>你的常见问题</a></li>
+<li id="popuptablink" style="display:none" class="navright"><a href="#" class="tabbutton_popup"  onclick='return GIGO.tabnav("popup")' id="href_popup">帮助菜单</a></li>
+
+<li style="display:none" id="debuglink"><a href="#" class="tabbutton_debug"  onclick='return GIGO.tabnav("debug")'>调试</a></li>
+<li style="display:none" id="siteslink"><a href="#" class="tabbutton_sites"  onclick='return GIGO.tabnav("sites")'>其他 IPv6 网站</a></li>
+
+
+
+</ul>
+</div>
+
+
+
+  <div class="tabbox_middle">
+    <div class="tabbox_inside" id="tabbox_inside">
+      <div id="tab_main" style="display:block">
+        <div id="tab_main_inside">
+        
+
+
+  <div id="your_ipv4"></div>
+
+  <div id="your_ipv6"></div>
+
+  <div id="your_isp"></div>
+
+
+  <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img style="height: 2em; width: auto;" src="/images/hires_spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+  <div id="results"></div>
+
+  <div id="results_eof"></div>
+  <div id="survey"></div>
+
+
+        </div>
+      </div>
+      <div id="tab_tests" style="display:none">
+        <div id="tab_tests_simple" style="display:block">
+          <!-- START tests.inc -->
+
+
+<div>
+  <p><b>此测试的原理：</b> 你的浏览器会尝试载入若干网址，结果成功与否能说明你的系统对 IPv6 的支持情况。</p>
+  <p>点击查看
+   <a href="#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("tech")'>技术信息</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary="tests run, and pass/fail">
+      <tr>
+        <td nowrap="nowrap">IPv4 域名连接测试</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_a">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">IPv6 域名连接测试</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_aaaa">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">双栈域名连接测试</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_ds">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">双栈域名大数据包传输测试</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_dsmtu">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">IPv6 大数据包传输测试</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6mtu">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">测试运营商 DNS 是否接入 IPv6</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_v6ns">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">查询 IPv4 运营商</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn4">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">查询 IPv6 运营商</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_asn6">
+            等待测试
+          </div>
+        </td>
+
+      </tr>
+
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">问题 DNS 测试</td>
+
+        <td nowrap="nowrap">&nbsp;</td>
+
+        <td nowrap="nowrap">
+          <div id="sum_test_buggydns1">
+            等待测试
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+<div><p>
+  点击查看
+  <a href="#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>联系与反馈</a></p></div>
+
+
+<!-- STOP tests.inc -->
+
+
+        </div>
+        <div id="tab_tests_tech" style="display:none">
+          <!-- START tech.inc -->
+
+
+<div>
+  <p><b>此测试的原理：</b> 你的浏览器会尝试载入若干网址，结果成功与否能说明你的系统对 IPv6 的支持情况。</p>
+  <p>点击查看
+     <a href="#" class="tabbutton_xxx" onclick='return GIGO.tabnav_tests("simple")'>测试项目</a>
+  </p>
+<hr/>
+</div>
+
+
+    <table cellpadding="3" border="0" summary=
+    "technical details showing ipv6 browser test">
+      <tr>
+        <td nowrap="nowrap">
+
+          <div>
+             IPv4 域名连接测试
+          </div>
+
+          <div id="test_a">
+            等待测试
+          </div>
+
+          <div id="results_a">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_a">
+            向 DNS 只有 A 记录的域名请求数据。通常使用的是 IPv4，但如果运营商部署了 NAT64、DNS64 或代理服务器机制，纯 IPv6 用户也有可能成功通过。
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            IPv6 域名连接测试
+          </div>
+
+          <div id="test_aaaa">
+            等待测试
+          </div>
+
+          <div id="results_aaaa">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_aaaa">
+            向 DNS 只有 AAAA 记录的域名请求数据。通常使用的是 IPv6。尚未接入 IPv6 互联网的用户很可能失败，但只要是立刻失败，目前就没有大问题。
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            双栈域名连接测试
+          </div>
+
+          <div id="test_ds">
+            等待测试
+          </div>
+
+          <div id="results_ds">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_ds">
+            <div>这是最重要的一项测试，检查你的浏览器能否连接兼备 IPv4 和 IPv6 的网站。只有 IPv4 的系统也应能（通过 IPv4）顺利连接。</div>
+            <p><b>如果这项测试失败或超时，当各个网站开始部署 IPv6 时，你会有大麻烦。</b></p>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             双栈域名大数据包传输测试
+          </div>
+
+          <div id="test_dsmtu">
+            等待测试
+          </div>
+
+          <div id="results_dsmtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_dsmtu">
+            验证你能否连接双栈服务器（类似双栈域名连接测试）并收发大数据包。如果这项测试超时，无论是什么原因，你在世界 IPv6 日都会遇到问题。
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+            IPv6 大数据包传输测试
+          </div>
+
+          <div id="test_v6mtu">
+            等待测试
+          </div>
+
+          <div id="results_v6mtu">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6mtu">
+            验证 IPv6 能否传输大数据包。如果这项测试超时，但其他 IPv6 测试成功，那么可能存在 PMTUD 问题，也许与 IP 隧道有关。
+            再次检查你的防火墙是否已放行 ICMPv6 第 2 类消息（“数据包过大”）。
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             测试运营商 DNS 是否接入 IPv6
+          </div>
+
+          <div id="test_v6ns">
+            等待测试
+          </div>
+
+          <div id="results_v6ns">
+            -
+          </div>
+          <div>
+           （附加项目）
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_v6ns">
+            这项测试针对的是你的域名服务器（而非你的系统），测试通过说明你的 DNS 服务器（通常由运营商提供）能够访问纯 IPv6 的 DNS 权威服务器。这对你（目前）访问 IPv6 网站来说不是特别重要。
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             查询 IPv4 运营商
+          </div>
+
+          <div id="test_asn4">
+            等待测试
+          </div>
+
+          <div id="results_asn4">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn4">
+            尝试识别你的 IPv4 运营商。这个名称可能与你生活中见到的品牌名不一致，也可能是某家公司的曾用名，但这个名称就是他们在网络世界中的名字。
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td nowrap="nowrap">
+          <div>
+             查询 IPv6 运营商
+          </div>
+
+          <div id="test_asn6">
+            等待测试
+          </div>
+
+          <div id="results_asn6">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_asn6">
+            尝试识别你的 IPv6 运营商。如果 IPv4 和 IPv6 运营商名称不一致，那么你可能使用了隧道，或者第三方提供的某种 IPv6。
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+      <tr class="optional_buggydns1" style="display:none">
+        <td nowrap="nowrap">
+          <div>
+            问题 DNS 测试
+          </div>
+
+          <div id="test_buggydns1">
+            等待测试
+          </div>
+
+          <div id="results_buggydns1">
+            -
+          </div>
+        </td>
+
+        <td>
+          <div id="detail_buggydns1">
+            查询一条异常的 AAAA 记录。有些路由器会将其误当作 A 记录，然后只保留前 32 位。我们不希望这种情形发生。
+          </div>
+        </td>
+      </tr>
+
+
+    </table>
+
+  <div id="tech_eof"></div>
+
+<div>
+
+  <hr/>
+  <p> 如果结果摘要指出了某些问题，你（或你的技术支持人员）也许可以借助上述信息排查故障。左侧显示了测试 URL 及测试结果，右侧是对应测试项目的说明。</p>
+
+</div>
+
+<div><p>
+  点击查看
+  <a href="#" class="tabbutton_mail"  onclick='return GIGO.tabnav("mail")'>联系与反馈</a></p></div>
+
+<!-- STOP tech.inc -->
+
+
+        </div>
+      </div>
+      <div id="tab_mail" style="display:none">
+        <!--START mail.inc -->
+
+  <div id="comments" style="display:block">
+
+    <div id="comments_wanted" style="display:none">
+      <p><b>你的配置很有参考价值。</b>我们一直在努力优化 test-ipv6.com，你愿意进一步提供你的浏览器和系统配置信息吗？在你的帮助下，我们还可以指导更多人解决系统问题。</p>
+    </div>
+
+    <div id="comments_unwanted" style="display:block">
+      <p>你可以在此表单中作出评论、表达担忧或提出问题。你的测试结果会自动一起发送。
+      网站管理员也会得知你的 IP 地址，以便回答你的问题。
+      使用此表单即表明你同意发送这些信息。
+      </p>
+    </div>
+
+    <div id="comments_faq" style="display:none">
+      <p><span id="comments_faq_link"></span>页面旨在解决<b>你的</b>具体问题，许多疑问都已得到解答，请先仔细阅读。如果你仍有疑问或意见，欢迎使用这个表单。</p>
+    </div>
+
+
+
+    <div>
+
+      <p>若要反馈测试中遇到的问题，或需要关于测试结果的帮助，请尽可能详细地填写信息。若是阐述意见，可以自行判断写多少最好。</p>
+
+      <p class="subtle">谢谢！<br/><a mailto=site.mailto href="-"><span lookup=site.contact>-</span> &lt;<span lookup=site.mailto>-</span>&gt;</a></p>
+
+    </div>
+
+    <div>
+      <form id="commentform" action="/comment.php" method="post" enctype="multipart/form-data" name="commentform"  onsubmit="return GIGO.validate_form(this)" >
+
+
+
+
+
+        <input type="hidden" name="form_tab_main" value="" />
+        <input type="hidden" name="form_config" value="" />
+        <input type="hidden" name="form_results" value="" />
+        <input type="hidden" name="form_replay" value="" />
+        <input type="hidden" name="a" value="" />
+        <input type="hidden" name="aaaa" value="" />
+        <input type="hidden" name="ds4" value="" />
+        <input type="hidden" name="ds6" value="" />
+        <input type="hidden" name="ipv4" value="" />
+        <input type="hidden" name="ipv6" value="" />
+        <input type="hidden" name="v6mtu" value="" />
+        <input type="hidden" name="v6ns" value="" />
+        <input type="hidden" name="ip4" value="" />
+        <input type="hidden" name="ip6" value="" />
+        <input type="hidden" name="dsmtu" value="" />
+        <input type="hidden" name="ip6subtype" value="" />
+        <input type="hidden" name="tokens" value= "" />
+        <input type="hidden" name="score_transition" value="" />
+        <input type="hidden" name="score_strict" value="" />
+        <input type="hidden" name="nobots" value="" />
+	<input type="hidden" name="subdomain" />
+
+
+<table summary="enable comment form">
+          <tr>
+            <td>
+              <b>反馈类型</b>:
+            </td><td>
+
+            <select id="purpose" name="purpose" onchange="return GIGO.onchange_purpose(this)">
+<option value="-">反馈类型</option>
+<option value="questions">关于测试结果的问题</option>
+<option value="bug">反馈此网站的问题或缺陷</option>
+<option value="isp">反馈运营商的网络缓慢
+<option value="hacked">手机或电脑被入侵
+<option value="hacked">遭到配偶、黑客、黑帮或政府监视
+<option value="gfw">中国大陆的 IPv6 问题
+<option value="suggestion">建议</option>
+<option value="cheersjeers">赞扬或批评</option>
+</select>
+</td>
+          </tr>
+
+</table>
+
+
+
+<div id="response_isp" class="nomail"   style="display:none">
+<p>网络服务相关的问题需要运营商来解决，请联系他们寻求帮助。</p>
+</div>
+
+<div id="response_hacked" class="nomail"  style="display:none">
+<p>本站不是安全分析或法律调查的工具。安全问题请咨询专业的网络安全人士，他们能够查明问题并提供你所需的帮助。</p>
+</div>
+
+<div id="response_gfw" class="nomail" style="display:none">
+<p>由于政策原因和“防火长城”的限制，本站无法为中国大陆网民提供可靠的结果。</p>
+</div>
+
+
+
+
+        <table summary="contact form" id="contact_form" style="display:none">
+
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>如果允许我们联系你，在此处填写邮箱地址。<i>如果需要回复则必须填写。</i></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" name="contact" /></td>
+          </tr>
+
+
+          <tr>
+            <td>任何你觉得可能有用的信息（例如你使用的路由器、防火墙和代理服务器），包括各类反馈意见。</td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="notes" rows="8" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div id="help_plugins" style="display:none">
+                基于 JavaScript 的测试失败了，可能是浏览器插件或扩展的问题。请说明你的浏览器使用了哪些插件和扩展。
+              </div>
+
+              <div id="help_generic" style="display:none">
+                如果你懂相关技术，请执行以下命令，并将其输出内容复制到此处：
+                <br/>
+                <code>nslookup -type=txt debug.test-ipv6.com</code><br/>
+                or 
+                <code>dig +short txt debug.test-ipv6.com</code><br/>
+                <code>netstat -nr</code><br/>
+                <code>ifconfig -a</code><br/>
+                将其输出复制到下面的文本框中，这有助于我推测你遇到的问题。
+              </div>
+
+              <div id="help_linux" style="display:none">
+                如果你懂相关技术，请执行以下命令，并将其输出内容复制到此处：
+                <br/>
+                <code>nslookup -type=txt debug.test-ipv6.com</code><br/>
+                or 
+                <code>dig +short txt debug.test-ipv6.com</code><br/>
+                <code>ip -f inet6 route show</code> <br/>
+                <code>ip -f inet6 addr</code> <br/>
+                将其输出复制到下面的文本框中，这有助于我推测你遇到的问题。
+              </div>
+
+              <div id="help_windows" style="display:none">
+                如果你懂技术，请打开“命令提示符”窗口，执行这三条命令：
+		<br/>
+                <code>  nslookup -type=txt debug.test-ipv6.com</code><br/>
+                <code>  ipconfig /all</code><br/>
+                <code>  netsh interface ipv6 show route</code><br/>
+                将其输出复制到下面的文本框中，这有助于我推测你遇到的问题。
+              </div>
+
+
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+            <textarea name="comments" rows="10" cols="80">
+</textarea></td>
+          </tr>
+
+          <tr><td>
+            <table><tr><td valign=top>
+              <input type="checkbox" id="consent" name="consent" value="given">
+            </td><td td valign=top class="subtle">
+               我同意将我的 IP 地址、测试结果、浏览器名称与版本、操作系统名称与版本，以及上面填写的所有信息（包括电子邮箱地址）以电子邮件的形式发送至 <a mailto=site.mailto href="-"><span lookup=site.contact></span> &lt;<span lookup=site.mailto></span>&gt;</a>，并且我填写的信息可能会经过 Google 翻译。
+             </td></tr></table>
+          </td></tr>
+
+
+          <tr>
+            <td><input type="submit" value="发送" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+<!-- STOP mail.inc -->
+
+
+      </div>
+      
+      <div id="tab_helpdesk" style="display:none">
+        <!--START helpdesk.inc -->
+
+<div id="helpdesk" style="display:block">
+
+    <div id="helpdesk_content">
+
+      <div id="progress_bar">
+<table class="results_wrapper proress_bar" summary="progress bar" style="display:block">
+<tr>
+  <td class="results_left"><p style="margin: 0;">
+  <img style="height: 2em; width: auto;" src="/images/hires_spinner.gif" alt="spinning image"/>
+  </p></td>
+  <td class="results_right"><span class="pb1_text"> &nbsp; </span></td>
+</tr>
+</table>
+</div>
+
+
+      <p>客服信息将在测试结束后显示。</p>
+    </div>
+
+</div>
+
+<p></p>
+<p>
+<span style="font-size: x-small">
+More information about this page, including how to bookmark it:
+<a href="/faq_helpdesk.html">faq_helpdesk.html</a>.</span>
+</p>
+
+
+
+<div id=replayurldiv  style="display:none">
+<hr/>
+<div>
+<p>
+如果运营商客服请你发送“测试结果链接”，就把下面的链接复制给他们。
+注意，这里面包括你当前的 IP 地址。
+不建议在论坛之类的公共网站上公开此链接。
+</p>
+<div id=replayurl>-</div>
+<p>
+在大多数电脑上，你都可以右键单击上面的网址，然后单击“复制”。
+</p>
+</div>
+</div>
+
+
+
+
+
+<!-- STOP helpdesk.inc -->
+
+
+      </div>
+      <!-- Hide these until needed -->
+      <div id="tab_faq" style="display:none">
+      </div>
+      <div id="tab_popup" style="display:none">
+      </div>
+      
+      
+      <div id="tab_debug" style="display:none">
+        
+  <div id="debug" style="display:block">
+
+  
+
+
+
+  <div>Debug info follows.  If requested, you can  <a href="#" class="tabbutton_tests"  onclick='return GIGO.debuggercomments()'>Send this debug info</a> for analysis. </div>
+
+  <div id="debug_dump"></div>
+
+  <div id="debug_eof"></div>
+
+  </div>
+
+
+      </div>
+
+      <div id="tab_sites" style="display:none">
+        
+  <div id="other_sites" style="display:block">
+
+
+  <div class="answer">
+    <b>由于你已接入 IPv6</b>，我们提供了这个页面以进一步测试你能否访问互联网上的其他 IPv6 网站。如果其中有网站测试失败，可以考虑联系你的运营商；如果你就是运营商，可以点击信息按钮查看测试使用的链接。
+  </div>
+
+  <div class="answer">
+    <p><b>提示</b>：点击某列首行可按该列排序，<a href="#" onclick="GIGO.test_sites(2); return false;">点击这里</a>重新检测你能访问的镜像网站。
+    </p>
+  </div>
+    
+    
+    <div id="sitestablediv">(generated by javascript)</div>
+  
+<!--   GIGO.test_contents(2); -->
+
+                 
+
+  <div class="answer">
+    <p>你也可以将自己的网站纳入此列表，对外提供基本的测试功能。只需向 Jason Fesler &lt;jfesler@gigo.com&gt; 提供两个图像 URL（一个纯 IPv4，一个纯 IPv6），并注明你的首页网址和机构名称即可。
+    </p>
+  </div>
+
+  <div class="answer">
+    我们也欢迎并感谢建立完整的镜像网站，无论是公用还是私用。请查看 <a href="https://github.com/falling-sky/source/wiki">Wiki</a> 了解详情。
+  </div>
+
+  
+  </div>
+
+
+      </div>
+   
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="logo">
+ <div id="logo_img"></div>
+ <div id="logo_operator"></div>
+</div>
+
+
+<hr/>
+<div id="about">
+<p>  Copyright (C) 2010, 2022 Jason Fesler. 保留所有权利。  Version 1.1.949 (3194944)<br/>
+
+ <a href="/mirrors.html">镜像</a> |
+<!-- <a href="mission.html">使命</a> | -->
+ <a href="https://github.com/falling-sky/source/wiki">源代码</a> |
+ <a href="mailto:jfesler@test-ipv6.com?subject=test-ipv6.com">电子邮件</a>
+ - &nbsp; -
+<a href="/attributions.html">致谢</a>
+
+<span class="ghost">
+  |  <a href="#" onclick=" GIGO.showdebug(); return false;">Debug</a>
+</span>
+
+
+
+
+
+  |
+
+<a href="locale.html" onclick="return help_page('locale.html','Locale')">
+<img src="/images/icon_987_red.png" class="em1" border="0" />zh_CN</a>
+100.00%
+
+
+<span id="social" style="display:none">
+|  分享到： 
+</span>
+
+
+<br/>
+<!-- Create disclaimer.inc.site to have your own text.
+     Create disclaimer.inc.en-us.site for language specific versions. -->
+
+这是 test-ipv6.com 的一个镜像网站。这里表达的观点未必反映镜像所有者的观点。
+
+</p>
+</div>
+
+
+ <script type="text/javascript">
+  $(document).ready(function() {
+    console.log("fixup_html.inc")
+    try { GIGO.fixup_html_per_site_config();} catch(e) {0};
+    console.log("fixup_html.inc part 2 ")
+    try { GIGO.fixup_html_per_locale();} catch(e) {console.log(e)};
+  });
+  </script>
+
+
+ <script type="text/javascript">
+
+
+// We want to show the "stats" tab if the site is configured for it.
+//Since we are now loading configs separately, instead of compiling
+//the web content tuned for a single site, we now must go find
+//and customize the stats tab on page load.
+
+
+try {
+
+   if (MirrorConfig.options.show_stats) {
+      // FIx the URL, show the tab
+
+      var arr_elms = [];
+      arr_elms = document.body.getElementsByTagName("a");
+      var elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].href = MirrorConfig.options.show_stats;
+         } 
+      }
+      }
+
+      // Show the tab
+      arr_elms = document.body.getElementsByTagName("li");
+      elms_len = arr_elms.length;
+      for (i=0; i<elms_len; i=i+1) {
+      if(arr_elms[i].getAttribute("tabname") != null){  
+         if (arr_elms[i].getAttribute("tabname") === "stats") {
+           arr_elms[i].style.display = 'inline';
+         } 
+      }
+      }
+   }
+
+
+} catch(e) {
+  var myAnchor = document.getElementById("tab_main");
+  var mySpan = document.createElement("div");
+  if (myAnchor && mySpan) {
+    mySpan.innerHTML = "Site configuration issue: bad or missing /site/config.js";
+    myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+  }
+};
+
+
+  </script>
+
+
+
+</body>
+</html>
+
